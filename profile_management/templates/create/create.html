@@ -1,0 +1,59 @@
+{% extends '../base.html'%}
+
+{% block content %}
+<div class='container'>
+    <form method='POST' enctype='multipart/form-data'>
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="inputName" class="form-label">Name</label>
+          <input type="text" class="form-control" name='name' id="inputName" aria-describedby="nameHelp">
+
+        </div>
+        <div class="mb-3">
+            <label for="inputEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="inputEmail" name='email' aria-describedby="emailHelp">
+     
+          </div>
+        <div class="mb-3">
+          <label for="inputFile" class="form-label">Upload File</label>
+          <input type="file" class="form-control" name='file' id="inputFile">
+        </div>
+        <div class="mb-3">
+      
+            <textarea type="text" class="form-control" name='address' id="inputAddress"></textarea>
+          </div>
+        <div class="mb-3">
+            <label for="inputPhoneNumber" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" name='phone_number' id="inputPhoneNumber" aria-describedby="phoneHelp">
+           
+         </div>
+         <div class='mb-3'>
+            <select class="form-select" name='gender' aria-label="Default select example">
+                <option selected>Open this select Gender</option>
+                <option value="MALE">MALE</option>
+                <option value="FEMALE">FEMALE</option>
+                <option value="OTHERS">OTHERS</option>
+              </select>
+         </div>
+         <div class='mb-3'>
+            <select class="form-select" name='religion' aria-label="Default select example">
+                <option selected>Open this select religion</option>
+                <option value="ISLAM">ISLAM</option>
+                <option value="HINDU">HINDU</option>
+                <option value="OTHERS">OTHERS</option>
+              </select>
+         </div>
+         <div class="mb-3">
+            <label for="inputDOB" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" name='date_of_birth' id="inputDOB" aria-describedby="dobHelp">
+    
+          </div>
+        
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="inputCheck">
+          <label class="form-check-label" for="inputCheck">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+{% endblock %}

@@ -2,6 +2,10 @@
 {%
 {% block content %}
 <p>Hello bangladesh</p>
+{%for i in prof%}
+<p>{{i.name}}</p>
+<img src='{{ i.image.url }}' />
+{% endfor %}
     
 {% endblock %}
     %}
