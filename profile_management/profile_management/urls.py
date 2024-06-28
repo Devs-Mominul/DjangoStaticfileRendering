@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('create/', include('create.urls')),
+      path('delete/', include('delete.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

@@ -1,11 +1,33 @@
 {% extends '../base.html' %}
-{%
+
 {% block content %}
 <p>Hello bangladesh</p>
-{%for i in prof%}
-<p>{{i.name}}</p>
-<img src='{{ i.image.url }}' />
-{% endfor %}
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Image</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in prof%}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td><img src='{{i.image.url}}' width='40px' /></td>
+            <td><a href="{% url 'delete' i.id %}"> delete</a></td>
+        </tr>
+        
+        {% endfor %}
+     
+    
+    </tbody>
+  </table>
+
     
 {% endblock %}
-    %}
+    
